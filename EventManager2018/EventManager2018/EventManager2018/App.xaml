@@ -10,6 +10,7 @@
 
             <!-- COLORES -->
             <Color x:Key="Primary">#FFBF00</Color>
+            <Color x:Key="Placeholders">#707070</Color>
             
         </ResourceDictionary>
     </Application.Resources>
