@@ -1,12 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EventManager2018.Views.EventPage">
+             x:Class="EventManager2018.Views.EventPage"
+             Title="Nuevo evento"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            BindingContext="{Binding EventVM}"
+            Command="{Binding CommandNewEvent}"
+            Icon="ic_add_person_white.png">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Aqui va el nuevo evento"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout
+            BindingContext="{Binding EventVM}"
+            Padding="24">
+            
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -163,4 +163,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_event_note.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_add_circle_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_add_person_white.png" />
+  </ItemGroup>
 </Project>
