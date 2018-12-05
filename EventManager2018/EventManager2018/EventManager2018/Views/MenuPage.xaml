@@ -5,13 +5,19 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Menu Page">
     <ContentPage.Content>
-        <StackLayout>
-            <!-- IMAGE -->
+
+        <StackLayout
+            BindingContext="{Binding MenuVM}"
+            Padding="24">
+            <!-- YELLOW BORDER -->
             <BoxView
                 BackgroundColor="{StaticResource Primary}"
+                CornerRadius="320"
                 HeightRequest="160"
-                HorizontalOptions="FillAndExpand"/>
-            
+                HorizontalOptions="Center"
+                WidthRequest="160"/>
+
+
             <!-- MENU LIST -->
             <ListView
                 x:Name="LstMenu"
@@ -25,26 +31,27 @@
                             <Grid>
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer
-                                        Command="{Binding Navegar}"/>
+                                        Command="{Binding NavigateCommand}"/>
                                 </Grid.GestureRecognizers>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image
-                                    Source="{Binding Icono}"
+                                    Source="{Binding Icon}"
                                     WidthRequest="50"
                                     HeightRequest="50"/>
                                 <Label
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     TextColor="Black"
-                                    Text="{Binding Titulo}"/>
+                                    Text="{Binding Title}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
