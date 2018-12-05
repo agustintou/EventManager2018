@@ -12,7 +12,7 @@ namespace EventManager2018
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new HomePage());
+            MainPage = new NavigationPage(new MasterPage());
         }
 
         protected override void OnStart()

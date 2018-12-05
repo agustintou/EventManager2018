@@ -157,4 +157,7 @@
       <Name>EventManager2018</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_event_note.png" />
+  </ItemGroup>
 </Project>
