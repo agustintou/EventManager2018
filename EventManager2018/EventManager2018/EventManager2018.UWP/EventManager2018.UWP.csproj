@@ -103,9 +103,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\ic_accept_circle_white.png" />
     <Content Include="Assets\ic_add_circle_white.png" />
     <Content Include="Assets\ic_add_person_white.png" />
+    <Content Include="Assets\ic_description.png" />
     <Content Include="Assets\ic_event_note.png" />
+    <Content Include="Assets\ic_manage.png" />
+    <Content Include="Assets\ic_search.png" />
+    <Content Include="Assets\ic_search_white.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />

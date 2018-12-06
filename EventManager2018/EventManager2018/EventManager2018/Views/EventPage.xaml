@@ -8,52 +8,99 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem
             BindingContext="{Binding EventVM}"
-            Command="{Binding CommandNewEvent}"
-            Icon="ic_add_person_white.png">
+            Command="{Binding CommandAccept}"
+            Icon="ic_accept_circle_white.png">
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout
-            BindingContext="{Binding EventVM}"
-            Padding="24">
+        <ScrollView>
+            <StackLayout
+                BindingContext="{Binding EventVM}"
+                Padding="24">
 
-            <!-- EVENT NAME -->
-            <Label
-                Font="15"
-                FontAttributes="Bold"
-                Text="Nombre del evento"
-                TextColor="{StaticResource Primary}"/>
-            <desing:MyEntry
-                Keyboard="Text"
-                Image="ic_event_note"
-                TextColor="Black"
-                Text="{Binding Event.Name}">
-            </desing:MyEntry>
+                <!-- EVENT NAME -->
+                <Label
+                    Font="15"
+                    FontAttributes="Bold"
+                    Text="Nombre del evento"
+                    TextColor="{StaticResource Titles}"/>
+                <desing:MyEntry
+                    Keyboard="Text"
+                    Image="ic_event_note"
+                    TextColor="Black"
+                    Text="{Binding Event.Name, Mode=TwoWay}">
+                </desing:MyEntry>
 
-            <!-- DATE -->
-            <Label
-                Font="15"
-                FontAttributes="Bold"
-                Text="Fecha"
-                TextColor="{StaticResource Primary}"/>
-            <DatePicker
-                Date="{Binding Event.Date}"
-                Format="D"
-                HorizontalOptions="FillAndExpand"
-                MinimumDate="{Binding MinimumDate}"/>
+                <!-- DESCRIPTION -->
+                <Label
+                    Font="15"
+                    FontAttributes="Bold"
+                    Text="Descripcion"
+                    TextColor="{StaticResource Titles}"/>
+                <Editor
+                    Keyboard="Text"
+                    Text="{Binding Event.Description, Mode=TwoWay}"
+                    TextColor="Black"/>
 
-            <!-- TYPE EVENT -->
-            <Label
-                Font="15"
-                FontAttributes="Bold"
-                Text="Tipo"
-                TextColor="{StaticResource Primary}"/>
-            <DatePicker
-                Date="{Binding Event.Date}"
-                Format="D"
-                HorizontalOptions="FillAndExpand"
-                MinimumDate="{Binding MinimumDate}"/>
+                <!-- DATE -->
+                <Label
+                    Font="15"
+                    FontAttributes="Bold"
+                    Text="Fecha"
+                    TextColor="{StaticResource Titles}"/>
+                <DatePicker
+                    Date="{Binding Event.Date, Mode=TwoWay}"
+                    Format="D"
+                    HorizontalOptions="FillAndExpand"
+                    MaximumDate="{Binding MaximumDate}"
+                    MinimumDate="{Binding MinimumDate}"
+                    TextColor="Black"/>
 
-        </StackLayout>
+                <!-- TICKETS -->
+                <Grid
+                    ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Font="15"
+                        FontAttributes="Bold"
+                        Grid.Column="0"
+                        Text="Con entrada?"
+                        TextColor="{StaticResource Titles}"/>
+                    <Switch
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        IsToggled="{Binding Event.Tickets, Mode=TwoWay}"/>
+                </Grid>
+
+                <!-- EVENT TYPE -->
+                <Grid
+                    ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Font="15"
+                        FontAttributes="Bold"
+                        Grid.Column="0"
+                        Text="Tipo"
+                        TextColor="{StaticResource Titles}"/>
+                    <Picker
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"/>
+                </Grid>
+
+                <!-- IMAGE -->
+                <Image
+                    BackgroundColor="#FFBF00"
+                    HeightRequest="90"
+                    HorizontalOptions="Center"
+                    WidthRequest="90"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

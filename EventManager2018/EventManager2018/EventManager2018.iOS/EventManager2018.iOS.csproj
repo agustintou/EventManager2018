@@ -169,4 +169,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_add_person_white.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_search_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_manage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_description.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_accept_circle_white.png" />
+  </ItemGroup>
 </Project>

@@ -34,6 +34,20 @@ namespace EventManager2018.ViewModels
                     Icon = @"ic_event_note.png",
                     Navigate = @"EventPage",
                     Title = @"Nuevo evento"
+                },
+
+                new MenuItem
+                {
+                    Icon = @"ic_search.png",
+                    Navigate = @"EventsPage",
+                    Title = @"Eventos publicos"
+                },
+
+                new MenuItem
+                {
+                    Icon = @"ic_manage.png",
+                    Navigate = @"ManageEventPage",
+                    Title = @"Administrar eventos"
                 }
             };
         }
