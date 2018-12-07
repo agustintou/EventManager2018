@@ -30,8 +30,8 @@ namespace EventManager2018.Models
 
         public byte[] Image { get; set; }
 
-        [Unique]
-        public string Cod { get; set; }
+        [Unique, MaxLength(12)]
+        public string Code { get; set; }
 
         //Navigation Properties
         [ForeignKey(typeof(Province))]
