@@ -9,9 +9,65 @@
         
         <!-- SEARCH -->
         <SearchBar
-            Text="Date"
+            Text="{Binding SearchText}"
             Placeholder="Buscar"
             PlaceholderColor="{StaticResource Placeholders}"
             SearchCommand="{Binding CommandSearch}"/>
+        
+        <!-- INFORMATION -->
+        <Label
+            Font="18"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            IsVisible="{Binding InformationIsVisible}"
+            Text="{Binding InformationText}"
+            TextColor="{StaticResource Placeholders}"
+            VerticalOptions="Center"/>
+
+        <!-- EVENT LIST -->
+        <ListView
+            x:Name="LstMenu"
+            ItemsSource="{Binding Events}"
+            IsPullToRefreshEnabled="True"
+            IsRefreshing="{Binding IsRefresing, Mode=TwoWay}"
+            HasUnevenRows="True"
+            SeparatorVisibility="Default"
+            SeparatorColor="{StaticResource Primary}"
+            RefreshCommand="{Binding CommandRefresh}"
+            VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding CommandDetail}"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- IMAGE -->
+                            <Image
+                                BackgroundColor="Red"
+                                HeightRequest="75"
+                                Grid.Column="0"
+                                Source="{Binding Image}"
+                                WidthRequest="75"/>
+                            
+                            <!-- EVENT NAME -->
+                            <Label
+                                Font="15"
+                                FontAttributes="Bold"
+                                HeightRequest="75"
+                                Text="{Binding Name}"
+                                TextColor="Black"
+                                VerticalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

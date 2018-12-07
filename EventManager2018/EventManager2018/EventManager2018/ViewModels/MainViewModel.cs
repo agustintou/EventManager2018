@@ -6,6 +6,9 @@
         public MenuViewModel MenuVM { get; set; }
 
         public EventViewModel EventVM { get; set; }
+
+        public SearchEventViewModel SeachEventVM { get; set; }
+
         #endregion
 
         #region Builders
@@ -13,6 +16,7 @@
         {
             MenuVM = new MenuViewModel();
             EventVM = new EventViewModel();
+            SeachEventVM = new SearchEventViewModel();
         }
         #endregion
 
