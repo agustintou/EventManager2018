@@ -30,7 +30,7 @@ namespace EventManager2018.Models
 
         public byte[] Image { get; set; }
 
-        [Unique, MaxLength(12)]
+        [Unique, MaxLength(8)]
         public string Code { get; set; }
 
         //Navigation Properties
