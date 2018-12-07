@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:desing="clr-namespace:EventManager2018.Desing"
+             xmlns:idioma="clr-namespace:EventManager2018.Helpers"
              x:Class="EventManager2018.Views.EventPage"
              Title="Nuevo evento"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
@@ -22,7 +23,7 @@
                 <Label
                     Font="15"
                     FontAttributes="Bold"
-                    Text="Nombre del evento"
+                    Text="{idioma:Translate NombreEvento}"
                     TextColor="{StaticResource Titles}"/>
                 <desing:MyEntry
                     Keyboard="Text"
@@ -35,7 +36,7 @@
                 <Label
                     Font="15"
                     FontAttributes="Bold"
-                    Text="Descripcion"
+                    Text="{idioma:Translate Descripcion}"
                     TextColor="{StaticResource Titles}"/>
                 <Editor
                     Keyboard="Text"
@@ -54,7 +55,7 @@
                         FontAttributes="Bold"
                         Grid.Column="0"
                         HorizontalOptions="Center"
-                        Text="Fecha"
+                        Text="{idioma:Translate Fecha}"
                         TextColor="{StaticResource Titles}"
                         VerticalOptions="Center"
                         WidthRequest="100"/>
@@ -80,7 +81,7 @@
                         FontAttributes="Bold"
                         Grid.Column="0"
                         HorizontalOptions="Center"
-                        Text="Con entrada?"
+                        Text="{idioma:Translate ConEntrada}"
                         TextColor="{StaticResource Titles}"
                         VerticalOptions="Center"
                         WidthRequest="100"/>
