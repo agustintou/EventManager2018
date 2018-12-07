@@ -1,4 +1,6 @@
-﻿using EventManager2018.Views;
+﻿using EventManager2018.SQLite.LiteConnection;
+using EventManager2018.SQLite.StandarDb;
+using EventManager2018.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,9 +10,14 @@ namespace EventManager2018
 {
     public partial class App : Application
     {
+        public static LocalDb DB { get; private set; }
+
         public App()
         {
             InitializeComponent();
+
+            Keys.DataBaseName = "EventManager2018.db3";
+            App.DB = LocalDb.Intance;
 
             MainPage = new NavigationPage(new MasterPage());
         }
