@@ -39,7 +39,7 @@ namespace EventManager2018.ViewModels
                 new MenuItem
                 {
                     Icon = @"ic_search.png",
-                    Navigate = @"EventsPage",
+                    Navigate = @"SearchEventPage",
                     Title = @"Eventos publicos"
                 },
 

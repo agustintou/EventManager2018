@@ -13,6 +13,9 @@ namespace EventManager2018.Services
                 case "EventPage":
                     await Application.Current.MainPage.Navigation.PushAsync(new EventPage());
                     break;
+                case "SearchEventPage":
+                    await Application.Current.MainPage.Navigation.PushAsync(new SearchEventPage());
+                    break;
                 default:
                     break;
             }

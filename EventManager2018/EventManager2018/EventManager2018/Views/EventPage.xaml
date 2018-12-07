@@ -39,36 +39,51 @@
                     TextColor="{StaticResource Titles}"/>
                 <Editor
                     Keyboard="Text"
+                    HeightRequest="100"
                     Text="{Binding Event.Description, Mode=TwoWay}"
                     TextColor="Black"/>
 
                 <!-- DATE -->
-                <Label
-                    Font="15"
-                    FontAttributes="Bold"
-                    Text="Fecha"
-                    TextColor="{StaticResource Titles}"/>
-                <DatePicker
-                    Date="{Binding Event.Date, Mode=TwoWay}"
-                    Format="D"
-                    HorizontalOptions="FillAndExpand"
-                    MaximumDate="{Binding MaximumDate}"
-                    MinimumDate="{Binding MinimumDate}"
-                    TextColor="Black"/>
-
-                <!-- TICKETS -->
-                <Grid
-                    ColumnSpacing="0">
+                <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="AUTO"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label
                         Font="15"
                         FontAttributes="Bold"
                         Grid.Column="0"
+                        HorizontalOptions="Center"
+                        Text="Fecha"
+                        TextColor="{StaticResource Titles}"
+                        VerticalOptions="Center"
+                        WidthRequest="100"/>
+                    <DatePicker
+                        Date="{Binding Event.Date, Mode=TwoWay}"
+                        Format="D"
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        MaximumDate="{Binding MaximumDate}"
+                        MinimumDate="{Binding MinimumDate}"
+                        TextColor="Black"/>
+                </Grid>
+
+                <!-- TICKETS -->
+                <Grid
+                    ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="AUTO"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Font="15"
+                        FontAttributes="Bold"
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
                         Text="Con entrada?"
-                        TextColor="{StaticResource Titles}"/>
+                        TextColor="{StaticResource Titles}"
+                        VerticalOptions="Center"
+                        WidthRequest="100"/>
                     <Switch
                         Grid.Column="1"
                         HorizontalOptions="Start"
@@ -79,26 +94,35 @@
                 <Grid
                     ColumnSpacing="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="AUTO"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label
                         Font="15"
                         FontAttributes="Bold"
                         Grid.Column="0"
+                        HorizontalOptions="Center"
                         Text="Tipo"
-                        TextColor="{StaticResource Titles}"/>
+                        TextColor="{StaticResource Titles}"
+                        VerticalOptions="Center"
+                        WidthRequest="100"/>
                     <Picker
                         Grid.Column="1"
                         HorizontalOptions="FillAndExpand"
                         TextColor="Black"/>
                 </Grid>
+                
+                <!-- INFORMATION -->
+                <Label
+                    Text="{Binding Information}"
+                    TextColor="{StaticResource Placeholders}"/>
 
                 <!-- IMAGE -->
                 <Image
                     BackgroundColor="#FFBF00"
                     HeightRequest="90"
                     HorizontalOptions="Center"
+                    Margin="0,20,0,0"
                     WidthRequest="90"/>
             </StackLayout>
         </ScrollView>

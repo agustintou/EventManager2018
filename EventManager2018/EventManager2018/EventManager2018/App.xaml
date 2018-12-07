@@ -11,7 +11,7 @@
             <!-- COLORES -->
             <Color x:Key="Primary">#FFBF00</Color>
             <Color x:Key="Placeholders">#707070</Color>
-            <Color x:Key="Titles">#747474</Color>
+            <Color x:Key="Titles">Red</Color>
             
         </ResourceDictionary>
     </Application.Resources>

@@ -28,6 +28,23 @@ namespace EventManager2018.ViewModels
         public DateTime MinimumDate { get; set; }
 
         public DateTime MaximumDate { get; set; }
+
+        public string _information { get; set; }
+        public string Information
+        {
+            get
+            {
+                return this._information;
+            }
+            set
+            {
+                if(value != _information)
+                {
+                    _information = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         #endregion
 
         #region Properties
