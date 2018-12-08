@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:design="clr-namespace:EventManager2018.Desing"
+             x:Class="EventManager2018.Views.GuestPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <StackLayout
+        BindingContext="{Binding GuestVM}"
+        Padding="24"
+        BackgroundColor="White"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="Center">
+
+        <!-- GUEST NAME -->
+        <Label
+                Font="16"
+                FontAttributes="Bold"
+                Text="Nombre del invitado"
+                TextColor="{StaticResource Titles}"/>
+        <design:MyEntry
+                Image="ic_person"
+                Placeholder="Nombre"
+                PlaceholderColor="{StaticResource Placeholders}"
+                Text="{Binding Guest.Name, Mode=TwoWay}"
+                TextColor="Black"/>
+
+        <!-- GUEST NAME -->
+        <Label
+                Font="16"
+                FontAttributes="Bold"
+                Text="Nombre del invitado"
+                TextColor="{StaticResource Titles}"/>
+        <design:MyEntry
+                Image="ic_person"
+                Placeholder="Nombre"
+                PlaceholderColor="{StaticResource Placeholders}"
+                Text="{Binding Guest.Name, Mode=TwoWay}"
+                TextColor="Black"/>
+
+        <!-- GUEST DNI -->
+        <Label
+                Font="16"
+                FontAttributes="Bold"
+                Text="DNI"
+                TextColor="{StaticResource Titles}"/>
+        <design:MyEntry
+                Image="ic_fingerprint"
+                Placeholder="DNI"
+                PlaceholderColor="{StaticResource Placeholders}"
+                Text="{Binding Guest.Dni, Mode=TwoWay}"
+                TextColor="Black"/>
+
+        <!-- COMPANIONS -->
+        <Label
+                Font="16"
+                FontAttributes="Bold"
+                Text="Acompañantes"
+                TextColor="{StaticResource Titles}"/>
+        <design:MyEntry
+            Image="ic_fingerprint"
+            Placeholder="DNI"
+            PlaceholderColor="{StaticResource Placeholders}"
+            Text="{Binding Guest.Dni, Mode=TwoWay}"
+            TextColor="Black"/>
+
+        <!-- GUEST IMAGE -->
+        <Label
+                Font="16"
+                FontAttributes="Bold"
+                Text="Foto"
+                TextColor="{StaticResource Titles}"/>
+        <Image
+            BackgroundColor="Black"
+            HeightRequest="75"
+            WidthRequest="75">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding CommandLoadingImage}"/>
+            </Image.GestureRecognizers>
+        </Image>
+    </StackLayout>
+</page:PopupPage>

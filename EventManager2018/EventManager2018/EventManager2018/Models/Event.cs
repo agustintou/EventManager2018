@@ -40,6 +40,8 @@ namespace EventManager2018.Models
         [OneToMany(CascadeOperations = CascadeOperation.CascadeInsert)]
         public List<Person> Persons { get; set; }
 
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeInsert)]
+        public List<Guests> Guest { get; set; }
 
         //Command
         public ICommand CommandDetail { get { return new RelayCommand(DetailC); } }

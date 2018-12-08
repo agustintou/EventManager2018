@@ -5,75 +5,85 @@
              x:Class="EventManager2018.Views.PublicEventPage"
              Title="Publico"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.ToolbarItems
+        BindingContext="{Binding PublicEventVM}">
+        <ToolbarItem
+            Icon="ic_refresh_white.png"
+            Command="{Binding CommandRefresh}"/>
+        <ToolbarItem
+            Icon="ic_accept_circle_white.png"
+            Command="{Binding CommandNowEvent}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout
+        <ScrollView>
+            <StackLayout
             BindingContext="{Binding PublicEventVM}"
             Padding="24">
-            
-            <!-- EVENT NAME -->
-            <Label
+
+                <!-- EVENT NAME -->
+                <Label
                 Font="16"
                 FontAttributes="Bold"
                 Text="Nombre evento"
                 TextColor="{StaticResource Titles}"/>
-            <design:MyEntry
+                <design:MyEntry
                 Image="ic_event_note"
                 Placeholder="Nombre evento"
                 PlaceholderColor="{StaticResource Placeholders}"
-                Text="{Binding Event.Name}"
+                Text="{Binding Event.Name, Mode=TwoWay}"
                 TextColor="Black"/>
 
-            <!-- DESCRIPTION -->
-            <Label
+                <!-- DESCRIPTION -->
+                <Label
                 Font="16"
                 FontAttributes="Bold"
                 Text="Descripcion"
                 TextColor="{StaticResource Titles}"/>
-            <design:MyEditor
+                <design:MyEditor
                 Image="ic_description"
                 HeightRequest="80"
-                Text="{Binding Event.Description}"
+                Text="{Binding Event.Description, Mode=TwoWay}"
                 TextColor="Black"/>
-            
-            <!-- DATE -->
-            <Grid
+
+                <!-- DATE -->
+                <Grid
                 ColumnSpacing="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
                     Font="16"
                     FontAttributes="Bold"
                     Grid.Column="0"
                     Text="Fecha"
                     TextColor="{StaticResource Titles}"
                     VerticalOptions="Center"/>
-                <DatePicker
-                    Date="{Binding Event.Date}"
+                    <DatePicker
+                    Date="{Binding Event.Date, Mode=TwoWay}"
                     Grid.Column="1"
                     HorizontalOptions="FillAndExpand"
                     MaximumDate="{Binding MaximumDate}"
                     MinimumDate="{Binding MiniumDate}"
                     VerticalOptions="Center"/>
-            </Grid>
+                </Grid>
 
-            <!-- SPECIAL GUESTS -->
-            <Grid
+                <!-- SPECIAL GUESTS -->
+                <Grid
                 Margin="0,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
                     Font="16"
                     FontAttributes="Bold"
                     Grid.Column="0"
                     Text="Invitados especiales"
                     TextColor="{StaticResource Titles}"
                     VerticalOptions="Center"/>
-                <!-- ADD NEW SPECIAL GUEST-->
-                <Image
+                    <!-- ADD NEW SPECIAL GUEST-->
+                    <Image
                     Aspect="Fill"
                     HeightRequest="30"
                     Grid.Column="1"
@@ -81,15 +91,15 @@
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     WidthRequest="30">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding CommandAddGuests}"/>
-                    </Image.GestureRecognizers>
-                </Image>
-            </Grid>
-            
-            <!-- LIST SPECIAL GUESTS -->
-            <ListView
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding CommandNowGuests}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+
+                <!-- LIST SPECIAL GUESTS -->
+                <ListView
                     ItemsSource="{Binding SpecialGuests}"
                     IsPullToRefreshEnabled="True"
                     IsRefreshing="{Binding IsRefresing, Mode=TwoWay}"
@@ -98,46 +108,48 @@
                     SeparatorColor="{StaticResource Placeholders}"
                     RefreshCommand="{Binding CommandRefresh}"
                     VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                
-                                <!-- SPECIAL GUEST -->
-                                <!-- IMAGE -->
-                                <Image
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- SPECIAL GUEST -->
+                                    <!-- IMAGE -->
+                                    <Image
                                     BackgroundColor="Black"
                                     HeightRequest="75"
+                                    Source="{Binding Image}"
                                     Grid.Column="0"
                                     WidthRequest="75"/>
-                                <!-- NAME -->
-                                <Label
+                                    <!-- NAME -->
+                                    <Label
                                     Font="16"
                                     FontAttributes="Bold"
                                     HorizontalOptions="CenterAndExpand"
                                     Text="{Binding Name}"
                                     TextColor="Black"/>
-                                <!-- DNI -->
-                                <Label
+                                    <!-- DNI -->
+                                    <Label
                                     Font="16"
                                     FontAttributes="Bold"
                                     HorizontalOptions="CenterAndExpand"
                                     Text="{Binding Dni}"
                                     TextColor="Black"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>        
     </ContentPage.Content>
 </ContentPage>
