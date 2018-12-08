@@ -193,4 +193,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_accept_circle_white.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_add_circle.png" />
+  </ItemGroup>
 </Project>

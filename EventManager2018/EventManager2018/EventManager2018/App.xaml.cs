@@ -1,9 +1,7 @@
-﻿using EventManager2018.Resources;
-using EventManager2018.SQLite.LiteConnection;
+﻿using EventManager2018.SQLite.LiteConnection;
 using EventManager2018.SQLite.StandarDb;
 using EventManager2018.Views;
 using Plugin.Multilingual;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,8 +18,6 @@ namespace EventManager2018
 
             Keys.DataBaseName = "EventManager2018.db3";
             App.DB = LocalDb.Intance;
-
-            AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
 
             MainPage = new NavigationPage(new MasterPage());
         }

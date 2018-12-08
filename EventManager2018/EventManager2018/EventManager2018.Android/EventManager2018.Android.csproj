@@ -69,6 +69,7 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="26.1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Design\MyEditorRenderer.cs" />
     <Compile Include="Design\MyEntryRenderer.cs" />
     <Compile Include="LiteConnection\Connection.cs" />
     <Compile Include="MainActivity.cs" />
@@ -133,6 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_accept_circle_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_add_circle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

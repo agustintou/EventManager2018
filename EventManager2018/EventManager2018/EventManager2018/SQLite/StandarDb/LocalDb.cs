@@ -36,4 +36,3 @@ namespace EventManager2018.SQLite.StandarDb
         }
     }
 }
-}

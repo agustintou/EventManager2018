@@ -10,17 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="Resources\AppResources.en.resx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Resources\AppResources.en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
@@ -30,14 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\EM.Domain\EM.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resources\AppResources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +36,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PrivateEventPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PublicEventPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SearchEventPage.xaml">

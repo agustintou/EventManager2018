@@ -129,6 +129,12 @@
   <data name="NombreEvento" xml:space="preserve">
     <value>Nombre del evento</value>
   </data>
+  <data name="Privado" xml:space="preserve">
+    <value>Privado</value>
+  </data>
+  <data name="Publico" xml:space="preserve">
+    <value>Publico</value>
+  </data>
   <data name="Tipo" xml:space="preserve">
     <value>Tipo</value>
   </data>
